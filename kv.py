@@ -53,9 +53,7 @@ print('Number of Tracks Found:',TotalTracks)
 
 #loop
 for (x,i) in enumerate(Solo,start=1):
-    print('Solo is Enabled',i.is_enabled())
-    if i.is_selected() == False:
-        i.click()
+    i.click()
     driver.find_element(By.CLASS_NAME,'download').click()
     print('Downloading Track: [',x,'of',TotalTracks,']')
     WebDriverWait(driver, 30).until(EC.visibility_of_element_located((By.CLASS_NAME, 'begin-download__manual-download')))
