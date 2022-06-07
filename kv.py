@@ -51,6 +51,10 @@ Solo = driver.find_elements(By.CLASS_NAME,'track__solo')
 TotalTracks = len(Solo)
 print('Number of Tracks Found:',TotalTracks)
 
+#enable solo on track2 so loop can start at 1
+Solo[1].click
+time.sleep(2)
+
 #loop
 for (x,i) in enumerate(Solo,start=1):
     i.click()
