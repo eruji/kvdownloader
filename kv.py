@@ -57,6 +57,7 @@ def getTracks(u,p,a,s):
     TotalTracks = len(Solo)
     print('Number of Tracks Found:',TotalTracks)
 
+<<<<<<< HEAD
     #loop
     for (x,i) in enumerate(Solo,start=1):
         print('Solo is Enabled',i.is_enabled())
@@ -66,6 +67,19 @@ def getTracks(u,p,a,s):
         print('Downloading Track: [',x,'of',TotalTracks,']')
         WebDriverWait(driver, 30).until(EC.visibility_of_element_located((By.CLASS_NAME, 'begin-download__manual-download')))
         driver.find_element(By.CSS_SELECTOR,".js-modal-close").click()
+=======
+#enable solo on track2 so loop can start at 1
+Solo[1].click
+time.sleep(2)
+
+#loop
+for (x,i) in enumerate(Solo,start=1):
+    i.click()
+    driver.find_element(By.CLASS_NAME,'download').click()
+    print('Downloading Track: [',x,'of',TotalTracks,']')
+    WebDriverWait(driver, 30).until(EC.visibility_of_element_located((By.CLASS_NAME, 'begin-download__manual-download')))
+    driver.find_element(By.CSS_SELECTOR,".js-modal-close").click()
+>>>>>>> main
 
     print("you've made it to the end")
     time.sleep(60)
