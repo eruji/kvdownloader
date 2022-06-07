@@ -65,10 +65,11 @@ time.sleep(2)
 #loop
 for (x,i) in enumerate(Solo,start=1):
     i.click()
+    time.sleep(1)
     driver.find_element(By.CLASS_NAME,'download').click()
     print('Downloading Track: [',x,'of',TotalTracks,']')
     WebDriverWait(driver, 30).until(EC.visibility_of_element_located((By.CLASS_NAME, 'begin-download__manual-download')))
     driver.find_element(By.CSS_SELECTOR,".js-modal-close").click()
 
-print('youve made it to the end')
+print('ALL DONE: Window closing in 60 seconds...')
 time.sleep(60)
