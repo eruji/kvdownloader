@@ -15,7 +15,14 @@ user = os.getenv('USER')
 password = os.getenv('PASSWORD')
 artist = os.getenv('ARTIST')
 song = os.getenv('SONG')
-songURL = "https://www.karaoke-version.com/custombackingtrack/"+artist+"/"+song+".html"
+
+if len(artist)>1:
+    print('.env set so using that...')
+    songURL = "https://www.karaoke-version.com/custombackingtrack/"+artist+"/"+song+".html"
+else:
+    print('####Enter Song URL: (right click to paste)####')
+    songURL = input()
+
 
 # create webdriver and open page
 driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
