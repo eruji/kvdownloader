@@ -12,6 +12,23 @@ from selenium.webdriver.support import expected_conditions as EC
 import time
 from dotenv import load_dotenv
 import os
+from tkinter import *
+
+window = Tk()
+window.title("KV Downloader")
+window.geometry('450x200')
+
+lbl_a = Label(window, anchor=E, width=30, text="Artist, eg. john-mayer:")
+lbl_s = Label(window, anchor=E, width=30, text="Song, eg. born-and-raised:")
+
+lbl_a.grid(column=0, row=2)
+lbl_s.grid(column=0, row=4)
+
+txt_a = Entry(window,width=30)
+txt_s = Entry(window,width=30)
+
+txt_a.grid(column=1, row=2)
+txt_s.grid(column=1, row=4)
 
 
 def download_tracks(a, s):
@@ -20,11 +37,11 @@ def download_tracks(a, s):
     password = os.getenv('PASSWORD')
     artist = str(a)  # os.getenv('ARTIST')
     song = str(s)  # os.getenv('SONG')
-    songURL = "https://www.karaoke-version.com/custombackingtrack/" + artist + "/" + song + ".html"
+    songURL = "https://www.karaoke-version.com/custombackingtrack/"+artist+"/"+song+".html"
 
     if len(artist) > 1:
         print('.env set so using that...')
-        songURL = "https://www.karaoke-version.com/custombackingtrack/" + artist + "/" + song + ".html"
+        songURL = "https://www.karaoke-version.com/custombackingtrack/"+artist+"/"+song+".html"
     else:
         print('####Enter Song URL: (right click to paste)####')
         songURL = input()
@@ -92,4 +109,8 @@ def download_tracks(a, s):
         time.sleep(60)
 
 
-download_tracks('john-mayer', 'gravity')
+btn = Button(window, text="Fetch Tracks", command=lambda: download_tracks(txt_a.get(), txt_s.get()))
+btn.grid(column=1, row=6)
+
+window.mainloop()
+
