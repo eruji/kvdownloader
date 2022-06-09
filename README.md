@@ -1,7 +1,8 @@
 ![image](https://user-images.githubusercontent.com/5192019/172959006-bb355296-781c-4b34-9230-f99e78eabdbf.png)
 
 
-download all karaoke version tracks automatically
+The easiest way to download ALL of the individual tracks from karaokeversion.com
+
 
 edit the example.env file and save as ".env"
 run the script kv.py
