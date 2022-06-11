@@ -13,7 +13,7 @@ from tkinter import *
 # create GUI
 window = Tk()
 window.title("KV Downloader")
-window.geometry('600x200')
+window.geometry('600x120')
 
 lbl_a = Label(window, anchor=E, width=30, text="Artist, eg. john-mayer:")
 lbl_s = Label(window, anchor=E, width=30, text="Song, eg. born-and-raised:")
@@ -24,9 +24,9 @@ lbl_s.grid(column=0, row=4)
 lbl_or.grid(column=0, row=6)
 lbl_url.grid(column=0, row=8)
 
-txt_a = Entry(window,width=50)
-txt_s = Entry(window,width=50)
-txt_url = Entry(window,width=50)
+txt_a = Entry(window,width=60)
+txt_s = Entry(window,width=60)
+txt_url = Entry(window,width=60)
 txt_a.grid(column=1, row=2)
 txt_s.grid(column=1, row=4)
 txt_url.grid(column=1,row=8)
@@ -98,7 +98,7 @@ def download_tracks(a, s, u):
 
 # button creation and function call
 btn = Button(window, text="Fetch Tracks", command=lambda: download_tracks(txt_a.get(), txt_s.get(), txt_url.get()))
-btn.grid(column=1, row=9)
+btn.grid(column=1 ,row=9)
 
 window.mainloop()
 time.sleep(60)
