@@ -1,15 +1,16 @@
 download all karaoke version tracks automatically
 
 edit the example.env file and save as ".env"
-run the script kv.py
 
-requirements:
-python 3.?
+## Installation
 
-selenium 4:
-pip install selenium 4
+1. Ensure you have Python 3 installed.
+2. Install the required packages using pip:
+```bash
+pip install -r requirements.txt
+```
 
-webdriver manager:
-pip install webdriver-manager
+## Usage
+Run the script `kv.py`
 
 2022.06.07 - New feature, leave the ARTIST config blank to prompt for Song URL: (example: https://www.karaoke-version.com/custombackingtrack/matchbox-twenty/3am.html)
